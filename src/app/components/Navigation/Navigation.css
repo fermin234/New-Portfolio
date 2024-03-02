@@ -1,0 +1,41 @@
+.liNav {
+  position: relative;
+  cursor: pointer;
+}
+
+.liNav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 0;
+  height: 10px;
+  background-color: rgba(129, 138, 145, 0);
+  transition: width 0.3s ease-in-out;
+}
+
+.liNav:hover::after {
+  width: 100%;
+  background-color: rgb(129, 138, 145);
+}
+
+.liNav.hover-fixed::after {
+  width: 75%;
+  background-color: rgb(255, 82, 119);
+}
+
+@media screen and (min-width: 1024px) {
+  .liNav::after {
+    bottom: -6px;
+    height: 5px;
+  }
+
+  .liNav:hover::after {
+    width: 100%;
+  }
+
+  .liNav.hover-fixed::after {
+    width: 100%;
+    background-color: rgb(255, 82, 119);
+  }
+}
